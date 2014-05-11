@@ -1742,6 +1742,9 @@ class YoutubeDL(object):
         if self.params.get('forceformat', False):
             self.to_stdout(info_dict['format'])
         if self.params.get('forcejson', False):
+            # do not print formats if 'all'
+            if self.params.get('format') == 'all':
+                info_dict['formats'] = None
             self.to_stdout(json.dumps(info_dict))
 
         # Do nothing else if in simulate mode
