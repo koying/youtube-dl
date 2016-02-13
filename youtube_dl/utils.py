@@ -520,6 +520,8 @@ def sanitize_filename(s, restricted=False, is_id=False):
 
 
 def sanitize_path(s):
+    return s
+
     """Sanitizes and normalizes path on Windows"""
     if sys.platform != 'win32':
         return s
